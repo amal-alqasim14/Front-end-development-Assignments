@@ -1,0 +1,169 @@
+/* Beauty Bliss Shop – stijl met Poppins (TheMix alternatief) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root{
+  --accent:#e07a9a;
+  --accent-dark:#c75d81;
+  --muted:#7b7b7b;
+  --bg:#fff7fa;
+  --card:#ffffff;
+  --radius:14px;
+  font-family:'Poppins', Arial, sans-serif;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:#2b2b2b;
+  line-height:1.6;
+  font-size:16px;
+}
+
+h1, h2, legend{
+  font-weight:600;
+  letter-spacing:0.3px;
+}
+
+.site-header{
+  background:linear-gradient(90deg,var(--accent),#f7aac2);
+  color:white;
+  text-align:center;
+  padding:28px 12px;
+  box-shadow:0 3px 15px rgba(0,0,0,0.08);
+}
+.site-header h1{
+  margin:0;
+  font-size:1.8rem;
+}
+.site-header p{
+  margin:6px 0 0;
+  font-weight:400;
+}
+.site-header.small{
+  padding:18px 10px;
+}
+
+.site-footer{
+  text-align:center;
+  padding:20px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.container{
+  max-width:1000px;
+  margin:30px auto;
+  padding:0 20px;
+}
+
+.grid{
+  display:grid;
+  gap:24px;
+}
+@media(min-width:700px){
+  .grid{grid-template-columns:repeat(3,1fr);}
+}
+
+/* ---------- Productkaarten ---------- */
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:0 6px 25px rgba(0,0,0,0.05);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  transition:transform .25s ease;
+}
+.card:hover{transform:translateY(-6px);}
+.card img{width:100%; height:auto;}
+.card h2{
+  margin:14px 16px 6px;
+  font-size:1.1rem;
+}
+.card p{
+  margin:0 16px 8px;
+  color:#444;
+}
+.price{
+  font-weight:600;
+  color:var(--accent-dark);
+  margin-left:16px;
+}
+
+/* ---------- Knoppen ---------- */
+.btn{
+  background:var(--accent);
+  color:white;
+  text-decoration:none;
+  text-align:center;
+  padding:10px 14px;
+  border-radius:var(--radius);
+  margin:10px 16px 16px;
+  font-weight:600;
+  transition:background 0.25s;
+  display:inline-block;
+}
+.btn:hover{
+  background:var(--accent-dark);
+}
+.btn.muted{
+  background:#f2f2f2;
+  color:#444;
+}
+
+/* ---------- Formulieren ---------- */
+.narrow{max-width:600px;}
+
+form{
+  background:var(--card);
+  padding:22px;
+  border-radius:var(--radius);
+  box-shadow:0 4px 20px rgba(0,0,0,0.05);
+}
+
+fieldset{
+  border:1px solid #f0d4dc;
+  border-radius:8px;
+  margin-bottom:16px;
+  padding:10px 14px;
+}
+legend{
+  color:var(--accent-dark);
+  font-weight:600;
+}
+
+label{
+  display:block;
+  margin:8px 0 4px;
+  font-weight:500;
+  font-size:15px;
+}
+input,select,textarea{
+  width:100%;
+  padding:10px 12px;
+  border:1px solid #e6b9c4;
+  border-radius:8px;
+  font-size:15px;
+  font-family:'Poppins', sans-serif;
+}
+textarea{resize:vertical; min-height:70px;}
+input:focus,textarea:focus,select:focus{
+  outline:none;
+  border-color:var(--accent);
+  box-shadow:0 0 0 2px rgba(224,122,154,0.2);
+}
+
+.actions{
+  display:flex;
+  justify-content:space-between;
+  margin-top:14px;
+}
+.actions .btn{
+  margin:0;
+}
+
+/* ---------- Kleine aanpassingen ---------- */
+a{
+  color:var(--accent-dark);
+}
+a:hover{text-decoration:underline;}

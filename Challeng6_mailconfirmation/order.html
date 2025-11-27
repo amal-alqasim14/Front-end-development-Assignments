@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Bestelpagina — Beauty Bliss Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header small">
+    <h1>Bestel jouw beautyproduct</h1>
+  </header>
+
+  <main class="container narrow">
+    <form id="orderForm" action="process.php" method="post">
+      <fieldset>
+        <legend>Productinformatie</legend>
+        <label for="item">Product *</label>
+        <input id="item" name="item" type="text" readonly required>
+
+        <label for="quantity">Aantal *</label>
+        <input id="quantity" name="quantity" type="number" min="1" max="99" value="1" required>
+      </fieldset>
+
+      <fieldset>
+        <legend>Contactinformatie</legend>
+        <label for="firstname">Voornaam *</label>
+        <input id="firstname" name="firstname" type="text" required>
+
+        <label for="lastname">Achternaam *</label>
+        <input id="lastname" name="lastname" type="text" required>
+
+        <label for="email">E-mail *</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="phone">Telefoonnummer</label>
+        <input id="phone" name="phone" type="tel" placeholder="+31 6 ...">
+      </fieldset>
+
+      <label for="notes">Opmerking (optioneel)</label>
+      <textarea id="notes" name="notes" rows="3" placeholder="Bijv. cadeaudoosje toevoegen"></textarea>
+
+      <div class="actions">
+        <button type="submit" class="btn">Bestelling verzenden</button>
+        <a href="index.html" class="btn muted">Terug</a>
+      </div>
+    </form>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const product = params.get('item') || '';
+    document.getElementById('item').value = decodeURIComponent(product);
+  </script>
+</body>
+</html>
