@@ -1,0 +1,96 @@
+
+body {
+    background: #fcecc9; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    margin: 0;
+    /* font-family: Arial, sans-serif; */
+}
+
+/* Hoofdcontainer centreren  */
+main {
+    text-align: center;
+}
+
+
+h1 {
+    margin-bottom: 70px;
+    color: #ff6f61; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font: bold;
+}
+
+.vormen {
+    display: flex; 
+    justify-content: space-evenly; 
+    align-items: center; 
+    gap: 80px; 
+}
+
+.shape {
+    width: 120px;
+    height: 120px;
+    transition: transform 0.5s ease, background 0.5s ease;
+    animation: float 3s ease-in-out infinite; /* zweef animatie continu */
+    cursor: pointer; /* verandert de cursor bij hover */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+}
+
+/* ZWEEF-ANIMATIE VOOR ALLE VORMEN */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }  
+    50% { transform: translateY(-15px); }  
+}
+
+
+/* de SPRING-ANIMATIE positiees */
+@keyframes jump {
+    0% { transform: translateY(0); }        /* startpositie */
+    30% { transform: translateY(-60px); }   /* omhoog springen */
+    60% { transform: translateY(0); }       /* terug naar beneden */
+    80% { transform: translateY(-20px); }   /* kleine nabeweging */
+    100% { transform: translateY(0); }      /* eindpositie */
+}
+
+.jump {
+    animation: jump 0.6s ease;
+}
+
+/* dat gaat vormen vergroten en iets draaien */
+.shape:hover {
+    transform: scale(1.1) rotate(10deg);
+}
+
+
+/* Ronde vorm */
+.circle {
+    background: #ff6f61;              
+    border-radius: 50%;               
+    box-shadow: 0 0 0 20px #ffd36e;   
+}
+
+/* Vierkante vorm */
+.square {
+    background: #6fc2ff;              
+    box-shadow: 0 0 0 20px #a3d8ff;   
+    border-radius: 15px;               
+}
+
+/* Driehoek */
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 60px solid transparent; 
+    border-right: 60px solid transparent;  
+    border-bottom: 120px solid #ffb86c;   
+    /* box-shadow: 0 0 0 5px #ffd88e;       */
+    background: none;
+    border-radius: 0;
+}
+
+

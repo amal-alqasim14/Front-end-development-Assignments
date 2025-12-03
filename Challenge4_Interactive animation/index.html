@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speelse Springende Vormen</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+    
+        <h1>Vormen leren</h1>
+
+        <div class="vormen">
+        
+            <div class="shape circle"></div>
+            <div class="shape square"></div>
+            <div class="shape triangle"></div>
+
+        </div>
+    </main>
+
+    <script>
+        // Selecteer alle vormen
+        const shapes = document.querySelectorAll(".shape");
+
+        // Voeg een hover interactie hiertoe
+        shapes.forEach(shape => {
+            shape.addEventListener("mouseenter", () => {
+                // bij muis erover
+                shape.classList.add("jump");
+
+                // stop de animatie jump klasse na 0,6 seconden
+                setTimeout(() => {
+                    shape.classList.remove("jump");
+                }, 600);
+            });
+        });
+    </script>
+
+</body>
+</html>
