@@ -40,7 +40,7 @@ $message = "
 
 $headers  = "MIME-Version: 1.0\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8\r\n";
-$headers .= "From: Dierenproducten Shop <no-reply@hera.local>\r\n";
+$headers .= "From: Beauty Shop <no-reply@hera.local>\r\n";
 $headers .= "Reply-To: $email\r\n";
 
 $recipient = "560205@student.fontys.nl";
