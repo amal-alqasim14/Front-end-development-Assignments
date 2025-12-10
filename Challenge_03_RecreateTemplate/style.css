@@ -118,7 +118,11 @@ body {
 /* Photo grid */
 .photo-grid img {
     width: 100%;
-    height: 80%;
+    /* maakt het element vierkant */
+    aspect-ratio: 1 / 1;
+    /* foto goed bijgesneden */
+    object-fit: cover;
+    /* maakt er een cirkel van */
     border-radius: 50%;
 }
 
